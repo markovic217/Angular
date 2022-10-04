@@ -1,0 +1,9 @@
+@import "../../styles.scss";
+
+.title {
+  @extend %center;
+  @include size(100%, 3rem);
+  background-image: linear-gradient(to right, $primary, $primary-alt);
+  @include text($text-color, get-size("large"));
+  box-shadow: 0 0 10px 0 $primary;
+}

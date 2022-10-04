@@ -1,0 +1,35 @@
+@import "../../customStyles.scss";
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .note-list {
+    display: flex;
+    flex-direction: column;
+    flex-grow:1;
+    overflow-y: scroll;
+    padding-top: 30px;
+  }
+
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+
+  /* Track */
+  &-track {
+    background: $light;
+  }
+
+  /* Handle */
+  &-thumb {
+    background: $primary;
+
+    /* Handle on hover */
+    &:hover {
+      background: $primary-dark;
+    }
+  }
+}

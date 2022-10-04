@@ -1,0 +1,12 @@
+<div class="container" (click)="openNote()">
+  <div class="note-title">
+    {{ note.title }}
+  </div>
+
+  <div class="note-body">
+    {{ note.body }}
+    <div class="note-overflow"></div>
+  </div>
+
+  <div class="x-button" (click)="deleteNote()">x</div>
+</div>

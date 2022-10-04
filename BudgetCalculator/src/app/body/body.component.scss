@@ -1,0 +1,54 @@
+@import "../../styles.scss";
+
+.budget-amount {
+  @include size(100%, 10rem);
+  @include b-color(darken($primary-alt, 20%));
+  @extend %center;
+  @include text($text-color, get-size("huge"));
+}
+
+.container {
+  @include size(30%);
+  @include margin($right:auto, $left:auto);
+  .input-block {
+    @extend %center;
+    justify-content: space-around;
+    @include margin($top: 2rem);
+    .amount{
+        @extend %reset-input;
+        @include size(15%, 2rem);
+        border-radius:2px;
+        font-size:get-size("medium");
+        outline: 2px solid $input-background-color;
+        transition:0.1s ease-out;
+        &:hover{
+            outline: 2px solid $dark;
+        }
+        &:focus{
+            outline: 2px solid $primary;
+            box-shadow:0px 0px 2px 0px $primary;
+        }
+    }
+    .name{
+        @extend .amount;
+        @include size(60%, 2rem);
+    }
+    .add{
+        @extend %reset-button;
+        @extend %cursor;
+        @include size(auto, 2rem);
+        color:$text-color;
+        @include b-color($primary);
+        border-radius: 5px;
+        font-size:get-size("small");  
+        transition: 0.2s ease-out;
+        &:hover{
+            @include b-color(lighten($accent,5%));
+        }
+        &:active{
+            transition: 0.1s ease-out;
+            @include b-color(lighten($accent,10%));
+        }
+    }
+  }
+}

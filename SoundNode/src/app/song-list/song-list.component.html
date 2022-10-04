@@ -1,0 +1,47 @@
+<mat-toolbar class="header" color="primary">
+    <mat-card-title>
+        Audio Player
+    </mat-card-title>
+</mat-toolbar>
+<mat-card class="list">
+    <mat-icon class="note">music_note</mat-icon>
+    <div class="header">Audio player</div>
+    <mat-list class="song-list">
+        <div mat-subheader>Songs</div>
+            <mat-list-item *ngFor="let song of songs" (click)="Start(song)" matRipple>
+                <mat-icon class="note" mat-list-icon>music_note</mat-icon>
+                <div mat-line>{{song.name}}</div>
+                <div mat-line>By: {{song.artist}}</div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+    </mat-list>   
+</mat-card>
+<mat-toolbar color="primary" class="footer">
+    <mat-toolbar-row>
+        <mat-slider color="warn" class="slider"></mat-slider>
+    </mat-toolbar-row>
+    <mat-toolbar-row >
+        <div class="action-buttons">
+            <button mat-icon-button class="button"><mat-icon class="icons">skip_previous</mat-icon></button>
+            <div *ngIf = "pplay; then playBlock; else pauseBlock"></div>
+            <ng-template #playBlock>
+                <button mat-icon-button class="button" (click) = "Play()">
+                    <mat-icon class="icons">play_arrow</mat-icon>
+                </button>
+            </ng-template>
+            <ng-template #pauseBlock>
+                <button mat-icon-button class="button" (click) = "Pause()">
+                    <mat-icon class="icons">pause</mat-icon>
+                </button>
+             </ng-template>
+            <button mat-icon-button class="button"><mat-icon class="icons">skip_next</mat-icon></button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div matRipple [matRippleTrigger]="trigger" class="my-ripple-container">
+    <!-- This is the ripple container, but not the trigger element for ripples. -->
+    kurac
+  </div>
+
+  <div #trigger>asdasdasdasdsasadasdasdasdasds</div>
